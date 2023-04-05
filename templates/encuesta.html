@@ -1,0 +1,435 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'sliderArea' %}
+
+<div class="slider-area ">
+    <div class="single-slider hero-overly slider-height2 d-flex align-items-center" style="background-image: url(/static/img/fondo/Encuesta.jpg); background-size : 100% 100%; background-repeat: no-repeat;
+  background-size : cover;">
+    </div>
+</div>
+
+{% endblock 'sliderArea' %}
+
+{% block 'middleContent' %}
+
+<!----------------------------- JQuery ----------------------------->
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/jquery.js' %} "></script>
+
+
+<style>
+    /* Styling the Form (Color, Padding, Shadow) */
+    #form {
+        background-color: #fff;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px 20px;
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Styling form-control Class */
+    .form-controler {
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    /* Styling form-control Label */
+    .form-controler label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Styling form-control input,
+        select, textarea */
+    .form-controler input,
+    .form-controler select,
+    .form-controler textarea {
+        border: 1px solid #777;
+        border-radius: 2px;
+        font-family: inherit;
+        padding: 10px;
+        display: block;
+        width: 95%;
+    }
+
+    /* Styling form-control Radio
+        button and Checkbox */
+    .form-controler input[type="radio"],
+    .form-controler input[type="checkbox"] {
+        display: inline-block;
+        width: auto;
+    }
+
+    /* Styling Button */
+    .botoncito {
+        background-color: #d40707;
+        border: 1px solid rgb(196, 6, 6);
+        border-radius: 7px;
+        font-size: 17px;
+        display: block;
+        width: 30%;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        color: white;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+    <!-- Create Form -->
+
+<div class="col-12">
+    <div class="row" style="margin-top: 50px; padding: 20px;">
+            <h3> Estimado cliente:</h3>
+    </div>
+
+</div>
+
+<div class="col-12">
+    <div class="row" style="padding: 20px;">
+            <p class="párrafosElegidos"> aicros tiene como política satisfacer las necesidades de sus CLIENTES. Una vía para conocer su grado de
+                satisfacción, opiniones y sugerencias lo constituye esta encuesta, la cual contribuye a identificar
+                elementos de mejora
+                para los servicios y productos que brindamos; así como para nuestro Sistema de Atención al Cliente. Su
+                opinión cuenta y le agradecemos su colaboración. Esta información será de uso exclusivo de <strong>
+                    aicros </strong>.
+            </p>
+    </div>
+</div>
+
+    <form id="form">
+
+        <!-- Fecha -->
+        <div class="form-controler">
+            <label for="name" id="label-name">
+                Fecha
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="date" id="name" placeholder="Seleccione una Fecha" />
+        </div>
+ 
+<!--         
+              
+                    <div class="form-controler">
+                        <label for="role" id="label-role">
+                            Which option best describes you?
+                        </label>
+                         
+                        Dropdown options 
+                        <select name="role" id="role">
+                            <option value="student">Student</option>
+                            <option value="intern">Intern</option>
+                            <option value="professional">
+                                Professional
+                            </option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>     -->
+
+        <div class="form-controler">
+            <label>
+                1-) En la recepción de la empresa, se le atiende:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-1" name="recepción"> &nbsp; Bien</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-2" name="recepción"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-3" name="recepción"> &nbsp; Mal</input>
+            </label>
+        </div>
+
+
+
+        <div class="form-controler">
+            <label>
+                2-) La atención recibida por el comercial es:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-4" name="comercial"> &nbsp; Buena</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-5" name="comercial"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-6" name="comercial"> &nbsp; Mala</input>
+            </label>
+        </div>
+
+
+
+        <div class="form-controler">
+            <label>
+                3-) Cómo considera la calidad de los servicios recibidos?
+            </label>
+
+
+
+
+
+            <label>
+
+                Productos de software:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-7" name="productos"> &nbsp; Buena</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-8" name="productos"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-9" name="productos"> &nbsp; Mala</input>
+            </label>
+
+
+
+
+
+            <label>
+
+                Cursos:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-10" name="cursos"> &nbsp; Buena</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-11" name="cursos"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-12" name="cursos"> &nbsp; Mala</input>
+            </label>
+
+
+
+
+
+            <label>
+
+                Automatización:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-13" name="Automatización"> &nbsp; Buena</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-14" name="Automatización"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-15" name="Automatización"> &nbsp; Mala</input>
+            </label>
+
+
+
+
+
+            <label>
+
+                Telemáticos:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-16" name="Telemáticos"> &nbsp; Buena</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-17" name="Telemáticos"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-18" name="Telemáticos"> &nbsp; Mala</input>
+            </label>
+
+
+
+
+
+
+
+            <label>
+
+                Venta de productos e insumos:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-19" name="Venta"> &nbsp; Buena</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-20" name="Venta"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-21" name="Venta"> &nbsp; Mala</input>
+            </label>
+
+
+
+
+
+
+
+            <label>
+
+                Soporte técnico:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-22" name="Soporte"> &nbsp; Buena</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-23" name="Soporte"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-24" name="Soporte"> &nbsp; Mala</input>
+            </label>
+        </div>
+
+
+        <div class="form-controler">
+            <label for="comment">
+                ¿ Por qué ?
+            </label>
+
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment">
+                        </textarea>
+        </div>
+
+
+
+
+
+
+        <div class="form-controler">
+            <label>
+                4-) La calidad de nuestros productos y servicios con respecto a otros proveedores es:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-25" name="recommed"> &nbsp; Buena</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-26" name="recommed"> &nbsp; Regular</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-27" name="recommed"> &nbsp; Mala</input>
+            </label>
+        </div>
+
+
+        <div class="form-controler">
+            <label for="comment">
+                ¿ Por qué ?
+            </label>
+
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment">
+                        </textarea>
+        </div>
+
+
+        <div class="form-controler">
+            <label for="comment">
+                5-) ¿Hace cuánto tiempo es cliente de la empresa?
+            </label>
+
+            <!-- multi-line text input control -->
+            <input name="tiempoVinculado" id="tiempoVinculado" type="text">
+            </input>
+        </div>
+
+
+        <div class="form-controler">
+            <label>6-) ¿Cómo conoció aicros?
+
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="checkbox" name="inp"> &nbsp; A través de sus productos en el mercado</input></label>
+            <label for="inp-2">
+                <input type="checkbox" name="inp"> &nbsp; A través de un amigo o cliente</input></label>
+            <label for="inp-3">
+                <input type="checkbox" name="inp"> &nbsp; Contactado por Aicros</input></label>
+            <label for="inp-4">
+                <input type="checkbox" name="inp"> &nbsp; Prensa</input></label>
+            <label for="inp-5">
+                <input type="checkbox" name="inp"> &nbsp; Radio y TV</input></label>
+            <label for="inp-6">
+                <input type="checkbox" name="inp"> &nbsp; Sitio Web</input></label>
+            <label for="inp-7">
+                <input type="checkbox" name="inp"> &nbsp; Redes Sociales</input></label>
+            <label for="inp-7">
+                <input type="checkbox" name="inp"> &nbsp; Por indicación del organismo superior</input></label>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="form-controler">
+            <label>
+                7-) Usted pertenece al sector:
+            </label>
+
+            <!-- Input Type Radio Button -->
+            <label for="recommed-1">
+                <input type="radio" id="recommed-28" name="recommed"> &nbsp; Presupuestado</input>
+            </label>
+            <label for="recommed-2">
+                <input type="radio" id="recommed-29" name="recommed"> &nbsp; Estatal</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-30" name="recommed"> &nbsp; No estatal</input>
+            </label>
+            <label for="recommed-3">
+                <input type="radio" id="recommed-31" name="recommed"> &nbsp; ONG</input>
+            </label>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="form-controler">
+            <label for="comment">
+                Any comments or suggestions
+            </label>
+
+            <!-- multi-line text input control -->
+            <textarea name="comment" id="comment" placeholder="Enter your comment here">
+                        </textarea>
+        </div>
+
+        <!-- Multi-line Text Input Control -->
+        <button class="botoncito" type="submit" value="submit">
+            Enviar
+        </button>
+    </form>
+
+
+
+
+
+    {% endblock 'middleContent' %}

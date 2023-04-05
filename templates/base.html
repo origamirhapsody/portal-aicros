@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link href="https://fonts.cdnfonts.com/css/kozuka-gothic-pr6n" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/helvetica-255" rel="stylesheet">
+    <title>aicros</title>
+</head>
+
+<body>
+
+    <!-- Header Start -->
+
+    <div class="header-area header-transparent" style="background-color: black;">
+        <div class="main-header ">
+
+            <div class="header-bottom  header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+
+                        <!-- Logo NavBar -->
+
+                        <div class="col-xl-2 col-lg-2 col-md-1 contenedorLogo">
+                            <div class="logo">
+
+                                <a href="{% url 'inicio' %}" class="big-logo"><img
+                                        src="/static/img/logo/identidad-74.png" alt=""></a>
+
+                                <a href="{% url 'inicio' %}" class="small-logo"><img
+                                        src="/static/img/logo/identidad-74.png" alt=""></a>
+                            </div>
+                        </div>
+
+                        <!-- Enlaces de Páginas -->
+
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <div class="main-menu d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation" style="text-align: right !important;">
+                                        <li><a href="{% url 'quienesSomos' %}">Nosotros</a></li>
+                                        <li><a href="{% url 'productos' %}">Productos</a></li>
+                                        <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                                        <li><a href="{% url 'documentos' %}">Documentos</a></li>
+                                        <li><a data-nav-section="home" href="{% url 'encuesta' %}">Encuesta</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- Íconos de Autenticar y Comprar en Tienda -->
+
+                        <div class="col-xl-2 col-lg-2 col-md-1 iconosResponsive" style="text-align: end; width: 50%;">
+                            <div class="tiendaClass">
+
+                                <a href="#" target="_blank"><span style="margin-right: 10px;"><img
+                                            src="/static/img/icon/Propuesta de Diseño-130.png" alt=""></span></a>
+                                <a href="#" target="_blank"><span style="margin-right: 10px;"><img
+                                            src="/static/img/icon/Propuesta de Diseño-131.png" alt=""></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none barraMenu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    {% block 'sliderArea' %}
+    {% endblock 'sliderArea' %}
+
+
+
+    {% block 'middleContent' %}
+    {% endblock 'middleContent' %}
+
+
+
+    <footer>
+
+        <div id="fh5co-footer" role="contentinfo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 to-animate">
+                        <h3 class="section-title" style="color: white;"> <strong style="font-size: 14pt;">Enlaces de
+                                interés</strong> </h3>
+                        <li><a href="https://www.micons.gob.cu/es" target="_blank">MICONS</a></li>
+                        <li><a href="https://www.mincom.gob.cu/es" target="_blank">MINCOM</a></li>
+                        <li><a href="https://www.gedic.cu/es" target="_blank">GEDIC</a></li>
+                        <li><a href="https://www.geicon.cu/" target="_blank">GEICON</a></li>
+                        <li><a href="https://www.cubacons.cu/es/directorio-comercial/osde-la-habana"
+                                target="_blank">CUBACONS</a></li>
+
+
+                        <h3 class="section-title" style="margin-top: 50px;color: white;"> <strong
+                                style="font-size: 14pt;">Horario de
+                                atención a clientes</strong>
+                        </h3>
+                        <p style="color: rgb(99, 99, 99);">
+                            8:30 AM - 12:00 PM <br>
+                            1:00
+                            PM - 4:00
+                            PM
+                        </p>
+
+                    </div>
+
+
+
+
+                    <div class="col-md-4 to-animate">
+                        <h3 class="section-title"> <strong style="color: white; font-size: 14pt;">Contáctenos</strong>
+                        </h3>
+                        <ul class="contact-info">
+
+                            <p style="color: rgb(99, 99, 99);">45 #1107 e/ Avenida 26 y Ulloa <br> Nuevo Vedado. Plaza
+                                de la Revolución. La habana. Cuba CP 10400 </p>
+                            <p style="color: rgb(99, 99, 99);">Sede en Matanzas: Calle San Juan Bautista e/ San Luis y
+                                Monserrate, P.Nuevo Matanzas. </p>
+                            <p style="color: rgb(99, 99, 99);"> +53 78812409 <br> +53 45273726</p>
+
+                            <a href="#">aicros@aicros.cu </a>
+                            <br>
+                            <a href="#">comercial@aicros.cu </a>
+                            <br>
+                            <a href="#">gcentro@aicros.cu </a>
+
+                        </ul>
+
+
+
+
+                        <ul class="social-media">
+
+                            <li><a href="https://www.facebook.com/AicrosSoftwareCuba/" target="_blank"
+                                    class="facebook"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/aicros1?lang=es" target="_blank" class="twitter"><i
+                                        class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/aicroscuba/" target="_blank" class="instagram"><i
+                                        class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=5359957259" target="_blank"
+                                    class=""><i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="https://t.me/clientes_aicros" target="_blank" class="telegram"><i
+                                        class="fab fa-telegram"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UC-TfNcBplXmGYG7Wl6e5uaA/videos?app=desktop&view=0&sort=dd&shelf_id=0"
+                                    target="_blank" class="youtube"><i class="fab fa-youtube"></i></a></li>
+
+                        </ul>
+
+
+                    </div>
+
+
+
+                    <div class="col-md-4 to-animate">
+                        <h3 class="section-title"> <strong style="color: white; font-size: 14pt;">Escríbanos...</strong>
+                        </h3>
+                        <form class="contact-form" method="POST"> {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name" class="sr-only">Nombre</label>
+                                <input type="name" class="form-control" id="name" placeholder="Nombre" name="names">
+                            </div>
+                            <div class="form-group">
+                                <label for="category" class="sr-only">Empresa,Mipyme o TCP</label>
+                                <input type="text" class="form-control" placeholder="Empresa,Mipyme o TCP"
+                                    name="categorys">
+                            </div>
+                            <div class="form-group">
+                                <label for="email_address" class="sr-only">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email"
+                                    name="emails">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="sr-only">Mensaje</label>
+                                <textarea class="form-control" id="messageS" rows="7" placeholder="Mensaje"
+                                    name="messages"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" id="btn-submit" class="btn btn-send-message btn-md"
+                                    style="padding: 15px;" value="Enviar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="color: rgb(99, 99, 99);"> &nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sitio Web de la empresa
+                    aicros
+                    <br>
+                    <strong style="color: white; ">aicros</strong> ©
+                    2022. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================= General ============================= -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/slicknav.css' %}">
+    <!-- <link rel="stylesheet" href=" {% static 'css/themify-icons.css' %}"> -->
+    <link rel="stylesheet" href=" {% static 'css/slick.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/global.css' %}">
+
+    <!-- Íconos ------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    </link>
+
+    <!-- JS -->
+    <script src=" {% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src=" {% static 'js/jquery.slicknav.min.js' %}"></script>
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src=" {% static 'js/owl.carousel.min.js' %}"></script>
+    <script src=" {% static 'js/slick.min.js' %}"></script>
+    <!-- Magnific-Popup -->
+    <script src=" {% static 'js/jquery.magnific-popup.js' %}"></script>
+    <!-- Scrollup, Nice-Select, Sticky, Main -->
+    <script src=" {% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src=" {% static 'js/main.js' %}"></script>
+    <!-- ========================================================================================================= -->
+
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block 'sliderArea' %}
+
+<div class="slider-area ">
+    <div class="single-slider hero-overly slider-height2 d-flex align-items-center" style="background-image: url(/static/img/fondo/Nosotros.jpg); background-repeat: no-repeat;
+  background-size : cover; ">
+    </div>
+</div>
+
+{% endblock 'sliderArea' %}
+
+
+{% block 'middleContent' %}
+
+
+<!----------------------------- JQuery ----------------------------->
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/jquery.js' %} "></script>
+
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/jquery.js' %} "></script>
+<link rel="stylesheet" href=" {% static 'diferenciados/sliderProductos/lightslider.css' %} ">
+<link rel="stylesheet" href=" {% static 'diferenciados/sliderProductos/sliderProductos.css' %} " />
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/lightslider.js' %} "></script>
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/script.js' %} "></script>
+
+
+<!----------------------------- Quienes Somos ----------------------------->
+
+
+<div class="whole-wrap" style="margin-top: 50px;">
+    <div class="container box_1170">
+        <div class="section-top-border">
+            {% for top_About in Encabezado_Nosotros %}
+            <div class="col-md-12">
+                <div class="row">
+                    <h5 style="color: hsl(0, 70%, 41%); margin-bottom: 20px;"><strong>
+                            {{top_About.título}} </strong> </h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="párrafosElegidos">
+                                {{top_About.texto_1}}
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="párrafosElegidos">
+                                {{top_About.texto_2}}
+                            </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----------------------------- Objetivos ----------------------------->
+
+<div class="whole-wrap">
+    <div class="container box_1170">
+        <div class="section-top-border">
+            <div class="valores">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12" style="margin-bottom: 10px;">
+                            <h5 style="color: hsl(0, 70%, 41%);"><strong>MISIÓN, VISIÓN Y VALORES</strong></h5>
+                        </div>
+
+                        <!----------------------------- Misión ----------------------------->
+
+                        {% for misi_About in Mision_Nosotros %}
+
+                        <div class="col-md-4" style="margin-bottom: 10px;">
+                            <div class="card" style="border-radius: 8px; height: 400px;">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="margin-bottom: 40px; margin-top: 20px;">
+                                        {{misi_About.título}}
+                                    </h5>
+                                    <p class="card-text párrafosElegidos">
+                                        {{misi_About.descripción}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                        <!----------------------------- Visión ----------------------------->
+
+                        {% for visi_About in Vision_Nosotros %}
+
+                        <div class="col-md-4" style="margin-bottom: 10px;">
+                            <div class="card" style="border-radius: 8px; height: 400px;">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="margin-bottom: 40px; margin-top: 20px;">
+                                        {{visi_About.título}}
+                                    </h5>
+                                    <p class="card-text párrafosElegidos">
+                                        {{visi_About.descripción}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                        <!----------------------------- Valores ----------------------------->
+
+                        {% for val_About in Valores_Nosotros %}
+
+                        <div class="col-md-4" style="margin-bottom: 10px;">
+                            <div class="card" style="border-radius: 8px; height: 400px;">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="margin-bottom: 40px; margin-top: 20px;">
+                                        {{val_About.título}}
+                                    </h5>
+                                    <span class="card-text párrafosElegidos">
+                                        {{val_About.descripción|linebreaks}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!----------------------------- Línea de Tiempo ----------------------------->
+
+
+<div class="allProduct" style="height: 100%; position: relative;">
+    <img src="/static/img/about/300ppp.jpg" alt="" style="width: 100%; height: 350px;">
+</div>
+
+
+<div class="whole-wrap">
+    <div class="container box_1170">
+        <div class="section-top-border">
+
+            <div class="container-fluid">
+
+                <div class="col-md-12">
+                    <div class="row" style="margin-top: -350px;">
+                        <h5 style="width: 100%; color: white; margin-left: 50px;">
+                            <strong>MÁS DE 25 AÑOS DE HISTORIA...</strong>
+                        </h5>
+                        <hr style="color: white; margin: 30px 100px 0px 100px; width: 80%;" →>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <ul id="anos" class="cs-hidden">
+
+                            {% for historia in Anno_Historia %}
+                            <li class="item-a">
+                                <div style="width: 275px;">
+                                    <div class="card"
+                                        style="border-radius: 8px; background-color: transparent !important;border-color: transparent;">
+                                        <div class="card-body">
+                                            <h4 class="card-title"
+                                                style="margin-bottom: 40px; margin-top: 20px; text-align: center;color: white;">
+                                                {{historia.número}}
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="card" style="border-radius: 12px;height: 150px;">
+                                        <div class="card-body">
+                                            <p class="card-text párrafosElegidos">
+                                                {{historia.descripción}}<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!----------------------------- Equipo de Trabajo ----------------------------->
+
+
+
+<div class="whole-wrap">
+    <div class="container box_1170">
+        <div class="section-top-border">
+
+            <div class="container-fluid">
+
+                <div class="valores">
+                    <div class="col-md-12">
+                        <div class="row">
+
+                            <div class="col-md-12" style="margin-bottom: 10px;">
+                                <h5 style="color: hsl(0, 70%, 41%);"><strong>EQUIPO DE TRABAJO</strong></h5>
+                            </div>
+                            {% for workTeam in Miembro_de_Trabajo %}
+                            <div class="caja-equipoTrabajo">
+
+                                <div class="row">
+                                    <div
+                                        style="background-color: white; width: 150px; height: auto;background-color: white;">
+                                        <img src="{{workTeam.foto.url}}" alt=""
+                                            style="width: auto; height: 150px; padding: 0px;border-radius: 8px;">
+                                    </div>
+                                    <div id="textoEquipoTrabajo" style="background-color: white; width: 200px;">
+                                        <p class="numero-equipoTrabajo párrafosElegidos" style="margin-top: 10px;">
+                                            <strong style="color: black;">
+                                                {{workTeam.nombre}}
+                                            </strong>
+                                        </p>
+                                        <p class="numero-equipoTrabajo párrafosElegidos"
+                                            style="margin-top: 5px; size: 10pt;">
+                                            {{workTeam.cargo}}<br>
+
+                                        </p>
+                                        <p class="numero-equipoTrabajo párrafosElegidos"><i class="fa fa-envelope"
+                                                style="margin-right: 5px; size: 10pt;"></i><a href="">
+                                                {{workTeam.correo}}
+
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!----------------------------- Eventos ----------------------------->
+
+<div class="whole-wrap">
+    <div class="container box_1170">
+        <div class="section-top-border">
+            <div class="valores">
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <div class="col-md-12" style="margin-bottom: 10px;">
+                            <h5 style="color: hsl(0, 70%, 41%);"><strong> EVENTOS DE LA
+                                    EMPRESA</strong>
+                            </h5>
+                        </div>
+
+                        {% for evento in Evento %}
+                        <div class="col-md-4">
+                            <div class="card" style="border-radius: 12px;">
+                                <div class="card-body">
+                                    <h5
+                                        style="margin-bottom: 40px; margin-top: 20px; text-decoration: none !important; color: black !important;">
+                                        {{evento.título}}
+                                    </h5>
+                                    <p class="párrafosElegidos">{{evento.descripción}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock 'middleContent' %}

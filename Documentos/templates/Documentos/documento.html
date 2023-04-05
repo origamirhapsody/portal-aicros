@@ -1,0 +1,638 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'sliderArea' %}
+
+<div class="slider-area ">
+    <div class="single-slider hero-overly slider-height2 d-flex align-items-center" style="background-image: url(/static/img/fondo/Documentos.jpg); background-size : 100% 100%; background-repeat: no-repeat;
+  background-size : cover;">
+    </div>
+</div>
+
+{% endblock 'sliderArea' %}
+
+
+{% block 'middleContent' %}
+
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/jquery.js' %} "></script>
+<link rel="stylesheet" href=" {% static 'css/documentos/styleDocument.css' %} ">
+
+<!------------------------------------------ Charla Productos ------------------------------------------->
+
+<div class="whole-wrap" style="margin-top: 50px;">
+    <div class="container box_1170">
+        <div class="section-top-border">
+
+            {% for clientes_Info_Documentos in Encabezado_Documentos %}
+
+            <div class="row">
+                <div class="col-md-12" style="margin-bottom: 10px;">
+                    <h5 style="color: hsl(0, 70%, 41%);"><strong>{{clientes_Info_Documentos.título}}</strong></h5>
+                </div>
+                <div class="col-md-6">
+                    <span class="párrafosElegidos">
+                        {{clientes_Info_Documentos.texto_1|linebreaks}}</p>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <span class="párrafosElegidos">
+                        {{clientes_Info_Documentos.texto_2|linebreaks}}</p>
+                    </span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+<!------------------------------------------ Banner de Documentos ------------------------------------------->
+
+<div class="allProduct" style="height: 100%; position: relative;">
+    <img src="/static/img/about/300ppp.jpg" alt="" style="width: 100%; height: 500px;">
+    <div class="whole-wrap">
+        <div class="container box_1170">
+            <div class="section-top-border">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="container">
+                            <div style="position: absolute; top: -500px">
+                                {% for texto_Docu_Rapidos in Texto_Documentos_Rapidos %}
+                                <h5 style="color: white;">{{texto_Docu_Rapidos.título}}</h5>
+                                <p
+                                    style="margin: 0 auto; text-align: left; width: 75%; margin-top: 50px; color: white;">
+                                    {{texto_Docu_Rapidos.texto}}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div style="margin: 0 auto; top: -250px; position: relative;">
+                                        {% for documentos_Rapidos in Documentos_de_Rápido_Acceso %}
+                                        <button class="btn"
+                                            style="cursor: default; height: 75px; width: 270px; padding: 5px; margin: 5px; background-color: white;color: black;"><a
+                                                href="{{ documentos_Rapidos.documento.url }}" style="color: black;"
+                                                download="" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{documentos_Rapidos.ícono.url}}" alt=""
+                                                    style=" margin-right: 5px; padding: 0px;">
+                                            </a>
+                                            <span class="párrafosElegidos"
+                                                style="font-weight: 12pt !important;">{{documentos_Rapidos.nombre}}</span>
+                                        </button>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------------------------------------ Sección Descargas ------------------------------------------->
+
+<section class="price-area section-gap" style="margin-top: -150px">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h5 style="text-align: left; width: 100% !important; color: hsl(0, 70%, 41%);">
+                        <strong>PROFORMAS DE CONTRATOS GENERALES</strong>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_1 in Contrato_General_Columna_1 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_1.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_1.ícono.url }}" alt="" style=" margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos" style="text-align: left; size: 10pt;">{{col_1.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                    class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_2 in Contrato_General_Columna_2 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_2.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_2.ícono.url }}" alt="" style="margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos" style="text-align: left;">{{col_2.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_3 in Contrato_General_Columna_3 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_3.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_3.ícono.url }}" alt="" style="margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos" style="text-align: left;">{{col_3.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End price Area -->
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start price Area -->
+<section class="price-area section-gap" style="margin-top: 28px;">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h5 style="text-align: left; width: 100% !important; color: hsl(0, 70%, 41%);margin-top: 50px;">
+                        <strong>
+                            CONTRATOS ESPECÍFICOS</strong>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for colEspecífico_1 in Contrato_Específico_Columna_1 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ colEspecífico_1.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ colEspecífico_1.ícono.url }}" alt="" style=" margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{colEspecífico_1.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                            class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for colEspecífico_2 in Contrato_Específico_Columna_2 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ colEspecífico_2.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ colEspecífico_2.ícono.url }}" alt="" style="margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos" style="text-align: left;">{{colEspecífico_2.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                        class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for colEspecífico_3 in Contrato_Específico_Columna_3 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ colEspecífico_3.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ colEspecífico_3.ícono.url }}" alt="" style="margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos" style="text-align: left;">{{colEspecífico_3.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                        class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="price-area section-gap" style="margin-top: 40px;">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h5 style="text-align: left; width: 100% !important; color: hsl(0, 70%, 41%);margin-top: 50px;">
+                        <strong> LISTADO DE PRODUCTOS Y SERVICIOS </strong>
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_ProdServ_1 in Listado_Productos_y_Servicios_Columna_1 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_ProdServ_1.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_ProdServ_1.ícono.url }}" alt="" style=" margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_ProdServ_1.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                    class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_ProdServ_2 in Listado_Productos_y_Servicios_Columna_2 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_ProdServ_2.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_ProdServ_2.ícono.url }}" alt="" style="margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos" style="text-align: left;">{{ col_ProdServ_2.nombre }}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_ProdServ_3 in Listado_Productos_y_Servicios_Columna_3 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_ProdServ_3.documento.url }}" download=""
+                                target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_ProdServ_3.ícono.url }}" alt="" style="margin-right: 10px;"> </a>
+                            <span class="párrafosElegidos" style="text-align: left;">{{ col_ProdServ_3.nombre }}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="price-area section-gap" style="margin-top: 50px;">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h5 style="text-align: left; width: 100% !important; color: hsl(0, 70%, 41%); margin-top: 50px;">
+                        <strong> REGISTRO Y CERTIFICACIONES DE SOFTWARE CENDA </strong>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Reg_y_Cert_CENDA_1 in Registro_y_Certificaciones_de_Software_CENDA_Columna_1 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Reg_y_Cert_CENDA_1.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_Reg_y_Cert_CENDA_1.ícono.url }}" alt="" style="margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Reg_y_Cert_CENDA_1.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                            class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Reg_y_Cert_CENDA_2 in Registro_y_Certificaciones_de_Software_CENDA_Columna_2 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Reg_y_Cert_CENDA_2.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_Reg_y_Cert_CENDA_2.ícono.url }}" alt="" style="margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Reg_y_Cert_CENDA_2.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                        class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Reg_y_Cert_CENDA_3 in Registro_y_Certificaciones_de_Software_CENDA_Columna_3 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Reg_y_Cert_CENDA_3.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_Reg_y_Cert_CENDA_3.ícono.url }}" alt="" style="margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Reg_y_Cert_CENDA_3.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                        class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="price-area section-gap" style="margin-top: 50px;">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h5 style="text-align: left; width: 100% !important; color: hsl(0, 70%, 41%); margin-top: 50px;">
+                        <strong> REGISTRO Y CERTIFICACIONES DE SOFTWARE MICONS </strong>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Reg_y_Cert_MICONS_1 in Registro_y_Certificaciones_de_Software_MICONS_Columna_1 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Reg_y_Cert_MICONS_1.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_Reg_y_Cert_MICONS_1.ícono.url }}" alt="" style="margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Reg_y_Cert_MICONS_1.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                            class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Reg_y_Cert_MICONS_2 in Registro_y_Certificaciones_de_Software_MICONS_Columna_2 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Reg_y_Cert_MICONS_2.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_Reg_y_Cert_MICONS_2.ícono.url }}" alt="" style="margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Reg_y_Cert_MICONS_2.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                        class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Reg_y_Cert_MICONS_3 in Registro_y_Certificaciones_de_Software_MICONS_Columna_3 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Reg_y_Cert_MICONS_3.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_Reg_y_Cert_MICONS_3.ícono.url }}" alt="" style="margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Reg_y_Cert_MICONS_3.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                        class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="price-area section-gap" style="margin-top: 50px; margin-bottom: 50px">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h5 style="text-align: left; width: 100% !important; color: hsl(0, 70%, 41%); margin-top: 50px;">
+                        <strong> OTROS DOCUMENTOS </strong>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Otros_Documentos_1 in Otros_Documentos_Columna_1 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Otros_Documentos_1.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{col_Otros_Documentos_1.ícono.url}}" alt="" style=" margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Otros_Documentos_1.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                            class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Otros_Documentos_1 in Otros_Documentos_Columna_2 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Otros_Documentos_2.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_Otros_Documentos_2.ícono.url }}" alt="" style=" margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Otros_Documentos_2.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                        class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 columDocument">
+                <div class="single-price" style="border-radius: 8px;">
+                    <ul class="price-list">
+                        {% for col_Otros_Documentos_1 in Otros_Documentos_Columna_3 %}
+                        {% if 20 >= forloop.counter %}
+                        <li class="d-flex align-items-center"><a href="{{ col_Otros_Documentos_3.documento.url }}"
+                                download="" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ col_Otros_Documentos_3.ícono.url }}" alt="" style=" margin-right: 10px;">
+                            </a>
+                            <span class="párrafosElegidos"
+                                style="text-align: left;size: 10pt;">{{col_Otros_Documentos_3.nombre}}</span>
+                            <!-- <a href="/static/descargables/Ctto-Marco-MAR-2022-.docx" download="true"
+                                                                    class="price-btn">Descargar</a> -->
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- End price Area -->
+
+<br><br>
+
+
+
+
+
+{% endblock 'middleContent' %}

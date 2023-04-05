@@ -1,0 +1,817 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'sliderArea' %}
+
+<!-- slider Area Start-->
+
+<div class="slider-area ">
+
+	<div class="slider-active">
+		<div class="single-slider hero-overly slider-height d-flex align-items-center fotoInicio" style="background-image: url(/static/img/fondo/Inicio.jpg);   height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;">
+
+		</div>
+	</div>
+</div>
+<!-- slider Area End-->
+
+{% endblock 'sliderArea' %}
+
+
+{% block 'middleContent' %}
+
+<!----------------------------- Servicios & Productos (Sliders) ----------------------------->
+
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/jquery.js' %} "></script>
+<link rel="stylesheet" href=" {% static 'diferenciados/sliderProductos/lightslider.css' %} ">
+<link rel="stylesheet" href=" {% static 'diferenciados/sliderProductos/sliderProductos.css' %} " />
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/lightslider.js' %} "></script>
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/script.js' %} "></script>
+
+<div class="col-md-12">
+	<div class="row">
+		<div class="col-md-3 colLines" style="margin-left: 70px; max-width: 245px">
+			<img id="LargeLine" style=" margin-left: 125px; margin-top: 10px; width: 120px; " alt="">
+		</div>
+		<div class="col-md-9 ColumnaGrande">
+			<!-- Quitar margin-left: 20px; responsive-->
+
+			<!--  Carrusel Promo -->
+
+			<div class="col-md-12">
+
+				<div class="row">
+
+					<div class="marquee">
+						<ul class="marquee-content">
+							{% for carru in Carrusel %}
+							<li><img src="{{carru.foto.url}}" alt=""></li>
+							{% endfor %}
+						</ul>
+					</div>
+
+
+					<style>
+						:root {
+							--marquee-width: 120vw;
+							--marquee-height: 30vh;
+							/* --marquee-elements: 12; */
+							/* defined with JavaScript */
+							--marquee-elements-displayed: 5;
+							--marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+							--marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+						}
+
+						.marquee {
+							width: var(--marquee-width);
+							height: var(--marquee-height);
+							background-color: rgb(247, 247, 247);
+							color: #eee;
+							overflow: hidden;
+							position: relative;
+							margin-top: 50px;
+						}
+
+						.marquee:before,
+						.marquee:after {
+							position: absolute;
+							top: 0;
+							width: 10rem;
+							height: 100%;
+							content: "";
+							z-index: 1;
+						}
+
+						.marquee:before {
+							left: 0;
+							/* background: linear-gradient(to right, rgb(212, 66, 66) 0%, transparent 100%); */
+						}
+
+						.marquee:after {
+							right: 0;
+							/* background: linear-gradient(to left, #111 0%, transparent 100%); */
+						}
+
+						.marquee-content {
+							list-style: none;
+							height: 100%;
+							display: flex;
+							animation: scrolling var(--marquee-animation-duration) linear infinite;
+						}
+
+						/* .marquee-content:hover {
+  animation-play-state: paused;
+} */
+						@keyframes scrolling {
+							0% {
+								transform: translateX(0);
+							}
+
+							100% {
+								transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements)));
+							}
+						}
+
+						.marquee-content li {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							/* text-align: center; */
+							flex-shrink: 0;
+							width: var(--marquee-element-width);
+							max-height: 100%;
+							font-size: calc(var(--marquee-height)*3/4);
+							/* 5rem; */
+							white-space: nowrap;
+							margin: 5px;
+						}
+
+						.marquee-content li img {
+							width: 100%;
+							/* height: 100%; */
+							border: 2px solid #eee;
+						}
+
+						@media (max-width: 600px) {
+							html {
+								font-size: 12px;
+							}
+
+							:root {
+								--marquee-width: 200vw;
+								--marquee-height: 30vh;
+								--marquee-elements-displayed: 3;
+							}
+
+							.marquee:before,
+							.marquee:after {
+								width: 5rem;
+							}
+						}
+
+						@media (min-width: 601px) and (max-width: 730px) {
+							html {
+								font-size: 12px;
+							}
+
+							:root {
+								--marquee-width: 160vw;
+								--marquee-height: 40vh;
+								--marquee-elements-displayed: 3;
+							}
+
+							.marquee:before,
+							.marquee:after {
+								width: 5rem;
+							}
+						}
+
+						@media (min-width: 731px) and (max-width: 1199px) {
+							html {
+								font-size: 12px;
+							}
+
+							:root {
+								--marquee-width: 130vw;
+								--marquee-height: 50vh;
+								--marquee-elements-displayed: 3;
+							}
+
+							.marquee:before,
+							.marquee:after {
+								width: 5rem;
+							}
+						}
+
+						@media (width: 800px) and (height: 600px) {
+							html {
+								font-size: 12px;
+							}
+
+							:root {
+								--marquee-width: 80vw;
+								--marquee-height: 25vh;
+								--marquee-elements-displayed: 3;
+							}
+
+							.marquee:before,
+							.marquee:after {
+								width: 5rem;
+							}
+						}
+
+						@media only screen and (width: 3840px) and (height: 2035px) {
+							html {
+								font-size: 12px;
+							}
+
+							:root {
+								--marquee-width: 55vw;
+								--marquee-height: 20vh;
+								--marquee-elements-displayed: 3;
+							}
+
+							.marquee:before,
+							.marquee:after {
+								width: 5rem;
+							}
+						}
+
+						@media only screen and (width: 3840px) and (height: 2160px) {
+							html {
+								font-size: 12px;
+							}
+
+							:root {
+								--marquee-width: 55vw;
+								--marquee-height: 20vh;
+								--marquee-elements-displayed: 3;
+							}
+
+							.marquee:before,
+							.marquee:after {
+								width: 5rem;
+							}
+						}
+					</style>
+
+
+					<script>
+
+						const root = document.documentElement;
+						const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+						const marqueeContent = document.querySelector("ul.marquee-content");
+
+						root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+
+						for (let i = 0; i < marqueeElementsDisplayed; i++) {
+							marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+						}
+
+					</script>
+				</div>
+			</div>
+
+
+			<!--  Carrusel Productos -->
+
+			<div class="col-md-12" style="margin-top: 100px;">
+				<div class="row">
+					<div class="col-md-3 preCarrusel_Producto">
+						{% for cajaProd in InicioProducto %}
+						<div class="tarjeta">
+							<h5 style="color: hsl(0, 70%, 41%);margin-top: 8px;">
+								<strong>{{cajaProd.name}}</strong>
+							</h5>
+							<div style="
+ text-align: left;
+	margin-left: 20px !important;
+	margin-top: 150px;
+	  height: 200px;
+  word-wrap: break-word;" id="cajaDescripcionProducto">
+								<p class="párrafosElegidos">
+									{{cajaProd.description}}</p>
+							</div>
+
+							<div id="botonDescripcionProducto" style="margin-top: 50px;"><a class="btn"
+									href="{% url 'productos' %}">IR A
+									PRODUCTOS</a></div>
+
+						</div>
+						{% endfor %}
+					</div>
+					<div class="col-md-9">
+						<div class="row">
+							<ul id="autoWidth" class="cs-hidden">
+								{% for carruselProd in Carrusel_Productos %}
+								<li class="item-a" style="width: 300px;">
+									<div class="caja"
+										style="width: 300px; height: 480px; padding: 0px !important; margin-right: 0px !important; margin-left: 5px !important;">
+										<div class="card"
+											style="height: 450px; padding: 0px !important;  margin-right: 0px !important; margin-left: 5px !important;">
+											<img style=" height: auto; width: 100%; object-fit: cover;
+  object-position: bottom;" class="card-img-top slide-img" src="{{ carruselProd.foto.url }}" alt="Card image"
+												style="height: auto; width: auto;">
+											<div class="card-body">
+												<!-- <h4 class="card-title">
+														{{carruselProd.título}}</h4> -->
+												<p class="card-text párrafosElegidos">
+													{{carruselProd.descripción}}
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--++++++++++++++++++++++++++++++++++++++  Servicios  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+			<div class="col-md-12" style="margin-top: 65px;">
+				<div class="row">
+					<div class="col-md-3">
+						{% for cajaServ in InicioServicio %}
+						<div class="tarjeta" style="margin-top: 8px;">
+							<h5 style="color: hsl(0, 70%, 41%);"> <strong>{{cajaServ.título}}</strong> </h5>
+
+							<div style="
+								 text-align: left;
+									margin-left: 20px !important;
+									margin-top: 150px;
+									  height: 200px;
+								  word-wrap: break-word;" id="cajaDescripcionServicio">
+								<p class="párrafosElegidos">
+									{{cajaServ.descripción}}</p>
+							</div>
+							<div id="botonDescripcionServicio" style="margin-top: 50px;"><a class="btn"
+									href="{% url 'servicios' %}">IR
+									A
+									SERVICIOS</a></div>
+
+						</div>
+						{% endfor %}
+					</div>
+					<div class="col-md-9">
+						<div class="row">
+							<ul id="blabla" class="cs-hidden">
+								{% for carruselServ in Carrusel_Servicios %}
+								<li class="item-a" style="width: 300px;">
+									<div class="caja" style="width: 300px; height: 450px;">
+										<div class="card"
+											style="width: 300px;height: 480px; padding: 0px !important;  margin-right: 0px !important; margin-left: 5px !important;">
+											<img style="height: 100%; width: auto;
+  " class="card-img-top slide-img" src="{{carruselServ.foto.url}}" alt="Card image" style="height: auto; width: auto;">
+											<div class="card-body">
+												<!-- <h4 class="card-title">
+																		{{carruselProd.título}}</h4> -->
+												<p class="card-text párrafosElegidos">
+													{{carruselServ.descripción}}
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<!--++++++++++++++++++++++++++++++++++++++  Líneas de Negocio ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+			<div class="col-md-12" style="margin-top: 100px;margin-left: 5px;">
+				<div class="row">
+					<h5 style="color: hsl(0, 70%, 41%); margin-left: 15px;"> <strong>LÍNEAS DE NEGOCIO</strong>
+					</h5>
+				</div>
+				<div class="col-md-12" style="margin-top: 5px;">
+					<div class="row">
+						<ul id="businessLines" class="cs-hidden">
+							{% for line in Líneas_de_Negocio %}
+							<li class="item-a">
+								<div class="caja-lineasNegocio"
+									style="padding: 0px !important; margin-right: 5px !important; margin-left: 0px !important;">
+
+									<div class="imgLineasNegocio">
+										<img src="{{line.ícono.url}}" alt="">
+									</div>
+									<div class="textoLineasNegocio párrafosElegidos">
+										<p>{{line.descripción}}
+										</p>
+									</div>
+								</div>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="col-md-12" style="margin-top: 100px;margin-left: 5px;">
+
+				<h5 style="color: hsl(0, 70%, 41%); margin-left: 10px; margin-bottom: 20px;"><strong>LA EMPRESA EN
+						CIFRAS...</strong>
+				</h5>
+
+
+				<div class="col-md-12">
+					<div class="row">
+						<ul id="empresa-cifras" class="cs-hidden">
+							{% for empCifra in Cifra %}
+							<li class="item-a" style="margin-left: 2px !important;">
+								<div class="caja-empresa">
+									<div class="row">
+										<div class="título">
+											<p class="párrafosElegidos"
+												style="margin-top: 50px; color: white !important;">
+												{{empCifra.título}}
+											</p>
+										</div>
+
+										<div>
+											<p class="numero-Empresa">
+												{{empCifra.número}}
+											</p>
+										</div>
+									</div>
+								</div>
+							</li>
+							{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Some Open Graph tags -->
+<meta name="description" content="{{notice_1.Continuación_de_Noticia}}">
+<meta name="author" content="Mahsource">
+<meta property="og:locale" content="en_EN" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{notice_1.título}}" />
+<meta property="og:description" content="{{notice_1.Continuación_de_Noticia}}" />
+<meta property="og:url" content="http://portal-django.aicros.cu/share_article/" />
+<meta property="og:site_name" content="portal-django.aicros.cu" />
+<meta property="article:publisher" content="https://www.facebook.com/" />
+<meta property="article:published_time" content="{{notice_1.Fecha}}" />
+<meta property="og:image" content="{{notice_1.foto.url}}" />
+
+
+<meta name="twitter:title" content="{{notice_1.título}}" />
+<meta name="twitter:description" content="{{notice_1.Continuación_de_Noticia}}" />
+<meta name="twitter:image" content="{{notice_1.foto.url}}" />
+<meta name="twitter:site" content="@itsmahcode" />
+<meta name="twitter:creator" content="@itsmahcode" />
+<meta name="twitter:via" content="itsmahcode" />
+<meta name="twitter:card" content="photo" />
+<meta name="twitter:url" content="http://portal-django.aicros.cu/share_article/" />
+
+<script>
+
+	$(function () {
+		/*Define some constants */
+		const ARTICLE_TITLE = document.title;
+		const ARTICLE_URL = encodeURIComponent(window.location.href);
+		const MAIN_IMAGE_URL = encodeURIComponent($('meta[property="og:image"]').attr('content'));
+
+		$('.Face').click(function () {
+			open_window('http://www.facebook.com/sharer/sharer.php?u=' + ARTICLE_URL, 'facebook_share');
+		});
+
+		$('.Twitt').click(function () {
+			open_window('http://twitter.com/share?url=' + ARTICLE_URL, 'twitter_share');
+		});
+
+		// $('.share-google-plus').click(function () {
+		// 	open_window('https://plus.google.com/share?url=' + ARTICLE_URL, 'google_share');
+		// });
+
+		// $('.share-linkedin').click(function () {
+		// 	open_window('https://www.linkedin.com/shareArticle?mini=true&url=' + ARTICLE_URL + '&title=' + ARTICLE_TITLE + '&summary=&source=', 'linkedin_share');
+		// });
+
+		// $('.share-pinterest').click(function () {
+		// 	open_window('https://pinterest.com/pin/create/button/?url=' + ARTICLE_URL + '&media=' + MAIN_IMAGE_URL + '&description=' + ARTICLE_TITLE, 'pinterest_share');
+		// });
+
+		// $('.share-tumblr').click(function () {
+		// 	open_window('http://www.tumblr.com/share/link?url=' + ARTICLE_URL + '&name=' + ARTICLE_TITLE + '&description=' + ARTICLE_TITLE, 'tumblr_share');
+		// });
+
+		function open_window(url, name) {
+			window.open(url, name, 'height=320, width=640, toolbar=no, menubar=no, scrollbars=yes, resizable=yes, location=no, directories=no, status=no');
+		}
+	});
+
+</script>
+
+
+<div class="allProduct" style="height: 100%; position: relative; margin-top: 70px;">
+	<img src="/static/img/about/300ppp.jpg" alt="" style="width: 100%;height: 400px;">
+
+	<div class="whole-wrap">
+		<div class="container box_1170">
+			<div class="section-top-border" style="padding-top: 0px; padding-bottom: 0px !important;">
+				<div class="container-fluid">
+					<h5 style="top: -300px; position: relative;color: white;">NOTICIAS MÁS
+						RELEVANTES</h5>
+					<div class="row p-3" style="padding: 0px !important;">
+						<div class="col-12 col-md-6 col-xl-4 mt-3"
+							style="top: -300px; padding-left: 8px !important; padding-right: 8px !important;">
+							<div class="card ds-card" style="border: none !important;">
+								{% for notice_1 in Noticia_1 %}
+								<img src="{{notice_1.foto.url}}" alt="Curso" class="card-img-top"
+									style="height: 250px; width: auto;">
+								<div class="card-body" id="box1" style="height: 320px;">
+									<!-- <h6>{{notice_1.título}}</h6> -->
+									<p id="intro1">
+										{{notice_1.Introducción_de_Noticia}}
+									</p>
+
+									<span id="leerMas1" style="color:hsl(0, 70%, 41%); font-weight: bold;"
+										onclick="document.getElementById('box1').style.height='100%'">Leer
+										más...</span>
+
+									<p id="mensaje1">
+										{{notice_1.Continuación_de_Noticia}}
+									</p>
+									<span class="oculto1" style="color:hsl(0, 70%, 41%); font-weight: bold;"
+										onclick="document.getElementById('box1').style.height='320px'">Leer
+										menos...</span>
+
+									<p>{{notice_1.Fecha}}
+										<!--28 de septiembre del 2022-->
+									</p>
+
+									{% endfor %}
+
+									<a class="Face" href="https://www.facebook.com/AicrosSoftwareCuba/" target="_blank"
+										style="margin-right: 10px;" class="facebook"><i class="fab fa-facebook"></i></a>
+									<a class="Insta" href="https://www.instagram.com/aicroscuba/" target="_blank"
+										style="margin-right: 10px;" class="instagram"><i
+											class="fab fa-instagram"></i></a>
+									<a class="Twitt" href="https://twitter.com/aicros1?lang=es" target="_blank"
+										class="twitter"><i class="fab fa-twitter"></i></a>
+
+								</div>
+
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-xl-4 mt-3"
+							style="top: -300px; padding-left: 8px !important; padding-right: 8px !important;">
+							<div class="card ds-card" style="border: none !important;">
+								{% for notice_2 in Noticia_2 %}
+								<img src="{{notice_2.foto.url}}" alt="Curso" class="card-img-top"
+									style="height: 250px; width: auto;">
+								<div class="card-body" id="box2" style="height: 320px;">
+									<!-- <h6>{{notice_2.título}}</h6> -->
+									<p id="intro2">
+										{{notice_2.Introducción_de_Noticia}}
+									</p>
+
+									<span id="leerMas2" style="color: hsl(0, 70%, 41%); font-weight: bold;"
+										onclick="document.getElementById('box2').style.height='100%'">Leer
+										más...</span>
+
+									<p id="mensaje2">
+										{{notice_2.Continuación_de_Noticia}}
+									</p>
+									<span class="oculto2" style="color: hsl(0, 70%, 41%); font-weight: bold;"
+										onclick="document.getElementById('box2').style.height='320px'">Leer
+										menos...</span>
+
+									<p>{{notice_2.Fecha}}</p>
+
+									{% endfor %}
+
+									<a href="https://www.facebook.com/AicrosSoftwareCuba/" target="_blank"
+										style="margin-right: 10px;" class="facebook"><i class="fab fa-facebook"></i></a>
+									<a href="https://www.instagram.com/aicroscuba/" target="_blank"
+										style="margin-right: 10px;" class="instagram"><i
+											class="fab fa-instagram"></i></a>
+									<a href="https://twitter.com/aicros1?lang=es" target="_blank" class="twitter"><i
+											class="fab fa-twitter"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-xl-4 mt-3"
+							style="top: -300px; padding-left: 8px !important; padding-right: 8px !important;">
+							<div class="card ds-card" style="border: none !important;">
+								{% for notice_3 in Noticia_3 %}
+								<img src="{{notice_3.foto.url}}" alt="Curso" class="card-img-top"
+									style="height: 250px; width: auto;">
+								<div class="card-body" id="box3" style="height: 320px;">
+
+
+									<!-- <h6>{{notice_3.título}}</h6> -->
+									<p id="intro3">
+										{{notice_3.Introducción_de_Noticia}}
+									</p>
+
+									<span id="leerMas3" style="color:hsl(0, 70%, 41%); font-weight: bold;"
+										onclick="document.getElementById('box3').style.height='100%'">Leer
+										más...</span>
+
+									<p id="mensaje3">
+										{{notice_3.Continuación_de_Noticia}}
+									</p>
+									<span class="oculto3" style="color: hsl(0, 70%, 41%); font-weight: bold;"
+										onclick="document.getElementById('box3').style.height='320px'">Leer
+										menos...</span>
+
+									<p>{{notice_3.Fecha}}</p>
+
+									{% endfor %}
+
+									<a href="https://www.facebook.com/AicrosSoftwareCuba/" target="_blank"
+										style="margin-right: 10px;" class="facebook"><i class="fab fa-facebook"></i></a>
+									<a href="https://www.instagram.com/aicroscuba/" target="_blank"
+										style="margin-right: 10px;" class="instagram"><i
+											class="fab fa-instagram"></i></a>
+									<a href="https://twitter.com/aicros1?lang=es" target="_blank" class="twitter"><i
+											class="fab fa-twitter"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="whole-wrap">
+	<div class="container box_1170">
+		<div class="section-top-border" style="padding-top: 0px;">
+			<div class="container-fluid">
+
+				<div class="col-md-12" style="top: -185px !important;">
+					<div class="row" style="margin-bottom: 12px; top: 0;">
+
+						<h5 style="color: hsl(0, 70%, 41%);left: 0px !important;"><strong>ALIANZAS</strong>
+						</h5>
+
+					</div>
+
+					<div class="row" style="background-color: white; border-radius: 8px;">
+						<ul id="alianza" class="cs-hidden">
+							{% for alianza in Alianza %}
+							<li class=" item-a">
+								<div class="caja-Alianza">
+
+									<div class="imgAlianza">
+										<img src="{{alianza.foto.url}}" alt="">
+									</div>
+
+								</div>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script>
+	$(document).ready(() => {
+		$('#mensaje1').hide();
+
+		$('#leerMas1').click(function () {
+			$('#intro1').show();
+			$('#leerMas1').hide();
+
+			$('#mensaje1').show('slow');
+			$('span.oculto1').show('slow');
+		});
+
+		$('span.oculto1').click(function () {
+			$('#intro1').show();
+			$('#mensaje1').hide();
+			$(this).hide();
+			$('#leerMas1').show();
+		});
+	});
+
+	// Noticia 2
+
+	$(document).ready(() => {
+		$('#mensaje2').hide();
+
+		$('#leerMas2').click(function () {
+			$('#intro2').hide();
+			$('#leerMas2').hide();
+
+			$('#mensaje2').show('slow');
+			$('span.oculto2').show('slow');
+		});
+
+		$('span.oculto2').click(function () {
+			$('#intro2').show();
+			$('#mensaje2').hide();
+			$(this).hide();
+			$('#leerMas2').show();
+		});
+	});
+
+
+
+	// Noticia 3
+
+	$(document).ready(() => {
+		$('#mensaje3').hide();
+
+		$('#leerMas3').click(function () {
+			$('#intro3').hide();
+			$('#leerMas3').hide();
+
+			$('#mensaje3').show('slow');
+			$('span.oculto3').show('slow');
+		});
+
+		$('span.oculto3').click(function () {
+			$('#intro3').show();
+			$('#mensaje3').hide();
+			$(this).hide();
+			$('#leerMas3').show();
+		});
+	});
+
+
+
+</script>
+
+
+
+<style>
+	.oculto1 {
+		display: none;
+	}
+
+	.oculto2 {
+		display: none;
+	}
+
+	.oculto3 {
+		display: none;
+	}
+</style>
+
+<!-- Funcion y estilo de Noticias Ver Mas
+
+	<script>
+
+		let leerMas = document.getElementById('leerMas');
+		let demo = document.getElementById('demo');
+
+		leerMas.style.fontWeight = "bold";
+		leerMas.style.color = "red";
+		leerMas.addEventListener('click', toggleText);
+
+		function toggleText() {
+			demo.classList.toggle('showText');
+
+			if (demo.classList.contains('showText')) {
+				leerMas.innerHTML = 'Ver Menos'
+			}
+			else {
+				leerMas.innerHTML = 'Ver Más...'
+			}
+		}
+
+
+	</script>
+
+		
+	<style>
+		.hideText {
+			display: none;
+		}
+	
+		.showText {
+			display: block;
+		}
+	</style>
+
+-->
+
+
+
+
+
+
+
+{% endblock 'middleContent' %}

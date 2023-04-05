@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block 'sliderArea' %}
+<div class="slider-area ">
+    <div class="single-slider hero-overly slider-height2 d-flex align-items-center" style="background-image: url(/static/img/fondo/Servicios.jpg); background-size : 100% 100%; background-repeat: no-repeat;
+  background-size : cover;">
+    </div>
+</div>
+<!-- slider Area End-->
+
+{% endblock 'sliderArea' %}
+
+
+{% block 'middleContent' %}
+
+<!----------------------------- JQuery ----------------------------->
+<script type="text/javascript" src=" {% static 'diferenciados/sliderProductos/jquery.js' %} "></script>
+
+
+<div class="whole-wrap" style="margin-top: 50px;">
+    <div class="container box_1170">
+        <div class="section-top-border">
+
+            {% for s in Encabezado_Servicio %}
+            <div class="row">
+                <div class="col-md-12" style="margin-bottom: 10px;">
+                    <h3 style="color: hsl(0, 70%, 41%);"><strong>{{s.título}}</strong></h3>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="párrafosElegidos">{{s.texto_1}}</p>
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="párrafosElegidos">
+                        {{s.texto_2}} </p>
+                    </p>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+<!-- +++++++======================================================================================================-->
+
+
+<div class="allProduct" style="background-color: rgb(235, 229, 229); height: 100%; position: relative;">
+    <img src="/static/img/about/300ppp.jpg" alt="" style="width: 100%; height: 350px;">
+    <div class="col-md-12">
+        <div class="row" style="background-color: white;">
+            <div class="container">
+                <div style="position: absolute; top: -300px">
+                    {% for descripcion_servicios_Aicros in Descripcion_Servicios_Aicros %}
+                    <h4 style="color: white;">{{descripcion_servicios_Aicros.título}}</h4>
+                    <p class="servi"
+                        style="margin: 0 auto; text-align: justify; width: 75%; margin-top: 50px; color: white;">
+                        {{descripcion_servicios_Aicros.texto_1}}</p>
+                    {% endfor %}
+                </div>
+
+                <!-- +++++++============================== Primera Fila de tarjetas  ========================================================================-->
+
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            {% for servicio_Aicros in Servicio_Aicros %}
+                            <div class="col-md-3" style="padding: 10px !important; margin-bottom: 5px !important;">
+                                <div class="card Cont_Servicios"
+                                    style="border-radius: 8px; margin-bottom: 10px; top: -70px;height: 350px;">
+                                    <div class="card-body" style="padding: 10px !important;">
+                                        <img class="card-img-top" src="{{servicio_Aicros.ícono.url}}" alt="Card image"
+                                            style="width: 80px !important; padding-top: 10px; padding-left: 15px;">
+                                        <div class="card-body">
+                                            <p class="card-text párrafosElegidos">
+                                                {{servicio_Aicros.descripción}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+{% endblock 'middleContent' %}
